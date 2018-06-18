@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>添加</title>
+    <meta>
 </head>
 <body>
 <h2 align="center">新闻管理系统</h2>
@@ -38,7 +39,7 @@
         </tr>
         <tr>
             <td> 新闻类型：<label>
-                <select name="cid" style="width:80px">
+                <select name="type-id" style="width:80px">
                     <c:forEach items="${list}" var="Type">
                         <option value="${Type.type_id}">${Type.typename}</option>
                     </c:forEach>
