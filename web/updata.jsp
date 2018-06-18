@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 舒露
-  Date: 2018/6/15
-  Time: 0:13
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -17,15 +10,16 @@
     <tbody>
     <tbody>
     <tr>
-        <td width="100px" height="60px"><a href="/allNewsServlet?method=AllNews">所有新闻</a></td>
-        <td width="100px" height="60px"><a href="/allNewsServlet?method=addNews">添加新闻</a></td>
-        <td width="100px" height="60px"><a href="/login.jsp">系统登陆</a></td>
-        <td width="100px" height="60px"><a href="/allNewsServlet?method=AllNews">新闻主页</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/allNewsServlet?method=AllNews">所有新闻</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/allNewsServlet?method=addNews">添加新闻</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/login.jsp">系统登陆</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/allNewsServlet?method=AllNews">新闻主页</a></td>
+        <td><a href="${pageContext.request.contextPath}/LoginOut">注销</a></td>
     </tr>
     </tbody>
 </table>
 <hr>
-<form action="/allNewsServlet?method=updata" method="post">
+<form action="${pageContext.request.contextPath}/allNewsServlet?method=updata" method="post">
     <table align="center">
         <tbody>
         <input type="hidden" name="id" value="${detail.id}">

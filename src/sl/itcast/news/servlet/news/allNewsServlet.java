@@ -32,7 +32,6 @@ public class allNewsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method = request.getParameter("method");
-        System.out.println(method);
         Class<allNewsServlet> allNewsServletClass = allNewsServlet.class;
         try {
             Method declaredMethod = allNewsServletClass.getDeclaredMethod(method, HttpServletRequest.class, HttpServletResponse.class);

@@ -26,7 +26,6 @@ public class typeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method = request.getParameter("method");
-        System.out.println(method);
         Class<typeServlet> typeServletletClass = typeServlet.class;
         try {
             Method declaredMethod = typeServletletClass.getDeclaredMethod(method, HttpServletRequest.class, HttpServletResponse.class);
@@ -39,7 +38,6 @@ public class typeServlet extends HttpServlet {
         try {
             List<type> list = typeService.selectType();
             request.setAttribute("list",list);
-            list.forEach(System.out::println);
             request.getRequestDispatcher("/addNews.jsp").forward(request,response);
         } catch (Exception e) {
             e.printStackTrace();

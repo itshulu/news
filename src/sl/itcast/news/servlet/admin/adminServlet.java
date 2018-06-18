@@ -51,9 +51,13 @@ public class adminServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    public void adminQuire(HttpServletRequest request,HttpServletResponse response){
+    public void adminQuire(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         String adminname = request.getParameter("adminname");
         String adminpass =request.getParameter("adminpass");
+        if(adminname==null||adminpass==null){
+            request.getRequestDispatcher("/login.jsp").forward(request,response);
+            return;
+        }
         admin admin = null;
         try {
             admin = adminService.quire(adminname,adminpass);

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 舒露
-  Date: 2018/6/14
-  Time: 20:30
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -18,10 +11,11 @@
     <tbody>
     <tbody>
     <tr>
-        <td width="100px" height="60px"><a href="/allNewsServlet?method=AllNews">所有新闻</a></td>
-        <td width="100px" height="60px"><a href="/typeServlet?method=typeList">添加新闻</a></td>
-        <td width="100px" height="60px"><a href="/login.jsp">系统登陆</a></td>
-        <td width="100px" height="60px"><a href="/allNewsServlet?method=AllNews">新闻主页</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/allNewsServlet?method=AllNews">所有新闻</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/typeServlet?method=typeList">添加新闻</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/login.jsp">系统登陆</a></td>
+        <td width="100px" height="60px"><a href="${pageContext.request.contextPath}/allNewsServlet?method=AllNews">新闻主页</a></td>
+        <td><a href="${pageContext.request.contextPath}/LoginOut">注销</a></td>
     </tr>
     <table>
         </tbody>
@@ -42,12 +36,12 @@
         <c:forEach items="${list}" var="newsDetail">
             <tr>
                 <td width="180px" height="100px"><a
-                        href="/allNewsServlet?method=findById&id=${newsDetail.id}">${newsDetail.title}</a></td>
+                        href="${pageContext.request.contextPath}/allNewsServlet?method=findById&id=${newsDetail.id}">${newsDetail.title}</a></td>
                 <td width="180px" height="100px">${newsDetail.author}</td>
                 <td width="180px" height="100px">${newsDetail.type_id}</td>
                 <td width="180px" height="100px">${newsDetail.time}</td>
-                <td><a href="/allNewsServlet?method=delect&id=${newsDetail.id}">删除</a></td>
-                <td><a href="/allNewsServlet?method=findBynewId&id=${newsDetail.id}">编辑</a></td>
+                <td><a href="${pageContext.request.contextPath}/allNewsServlet?method=delect&id=${newsDetail.id}">删除</a></td>
+                <td><a href="${pageContext.request.contextPath}/allNewsServlet?method=findBynewId&id=${newsDetail.id}">编辑</a></td>
             </tr>
         </c:forEach>
         </tbody>
